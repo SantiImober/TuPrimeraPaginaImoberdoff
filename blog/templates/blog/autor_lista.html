@@ -1,0 +1,19 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Autores{% endblock %}
+
+{% block content %}
+    <h1>Autores</h1>
+    <a href="/autores/nuevo/">+ Nuevo Autor</a>
+    <br><br>
+
+    {% for autor in autores %}
+        <div class="card">
+            <h3>{{ autor }}</h3>
+            <p>{{ autor.email }}</p>
+            <p>{{ autor.bio }}</p>
+        </div>
+    {% empty %}
+        <p>No hay autores todavía.</p>
+    {% endfor %}
+{% endblock %}

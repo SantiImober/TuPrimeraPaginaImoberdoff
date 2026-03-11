@@ -1,0 +1,22 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Inicio - Mi Blog{% endblock %}
+
+{% block content %}
+    <h1>Bienvenido al Blog</h1>
+    <p>Últimos posts:</p>
+
+    {% if posts %}
+        {% for post in posts %}
+            <div>
+                <h2>{{ post.title }}</h2>
+                <p>{{ post.content }}</p>
+                <small>Autor: {{ post.author }} | Categoría: {{ post.category }}</small>
+                <hr>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No hay posts todavía.</p>
+    {% endif %}
+
+{% endblock %}

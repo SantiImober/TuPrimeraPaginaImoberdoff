@@ -1,0 +1,18 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Categorías{% endblock %}
+
+{% block content %}
+    <h1>Categorías</h1>
+    <a href="/categorias/nueva/">+ Nueva Categoría</a>
+    <br><br>
+
+    {% for categoria in categorias %}
+        <div class="card">
+            <h3>{{ categoria }}</h3>
+            <p>{{ categoria.description }}</p>
+        </div>
+    {% empty %}
+        <p>No hay categorías todavía.</p>
+    {% endfor %}
+{% endblock %}
